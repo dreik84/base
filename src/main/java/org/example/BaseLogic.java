@@ -53,7 +53,22 @@ public class BaseLogic {
         return this;
     }
 
+    public BaseLogic halfAdder(int op1, int op2) {
+        int res1 = op1 & op2;
+        int res2 = op1 ^ op2;
+
+        String res = res1 + "" + res2;
+        System.out.println(res);
+        operand = Integer.parseInt(res);
+
+        return this;
+    }
+
     public int res() {
         return operand;
+    }
+
+    public void show() {
+        System.out.println(Integer.toBinaryString(operand));
     }
 }

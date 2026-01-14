@@ -9,12 +9,19 @@ public class BaseApp {
         System.out.println(Integer.toBinaryString(op));
         System.out.println(Integer.toBinaryString(notOp));
         System.out.println(notOp);
-        System.out.println(base.and(1, 0).res());
-        System.out.println(base.or(0, 0).res());
-        System.out.println(base.xor(1, 1).res());
-        System.out.println(base.xor2(0, 1).res());
-        System.out.println(base.xor2(1, 0).res());
-        System.out.println(base.xor2(0, 0).res());
-        System.out.println(base.xor2(1, 1).res());
+        base.and(1, 0).show();
+        base.or(0, 0).show();
+        base.xor(1, 1).show();
+        base.xor2(0, 1).show();
+        base.xor2(1, 0).show();
+        base.xor2(0, 0).show();
+        base.xor2(1, 1).show();
+
+        System.out.println();
+
+        base.halfAdder(0, 0);
+        base.halfAdder(0, 1);
+        base.halfAdder(1, 0);
+        base.halfAdder(1, 1);
     }
 }
