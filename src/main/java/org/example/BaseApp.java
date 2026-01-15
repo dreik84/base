@@ -26,6 +26,13 @@ public class BaseApp {
 
         System.out.println();
 
+        base.halfAdder2(0, 0);
+        base.halfAdder2(0, 1);
+        base.halfAdder2(1, 0);
+        base.halfAdder2(1, 1);
+
+        System.out.println();
+
         base.halfAdderNandGate(0, 0);
         base.halfAdderNandGate(0, 1);
         base.halfAdderNandGate(1, 0);
