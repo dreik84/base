@@ -54,12 +54,29 @@ public class BaseLogic {
     }
 
     public BaseLogic halfAdder(int op1, int op2) {
-        int res1 = op1 & op2;
-        int res2 = op1 ^ op2;
+        int sum = op1 ^ op2;
+        int carry = op1 & op2;
 
-        String res = res1 + "" + res2;
+        String res = carry + "" + sum;
         System.out.println(res);
-        operand = Integer.parseInt(res);
+        operand = Integer.parseInt(res, 2);
+
+        return this;
+    }
+
+    public BaseLogic halfAdderNandGate(int op1, int op2) {
+        int nand4 = ~(op1 & op2);
+        int nand1 = ~(op1 & nand4);
+        int nand2 = ~(nand4 & op2);
+        int nand3 = ~(nand1 & nand2); // sum
+        int nand5 = ~(nand4 & nand4); // carry
+
+        int sum = nand3;
+        int carry = nand5;
+
+        String res = carry + "" + sum;
+        System.out.println(res);
+        operand = Integer.parseInt(res, 2);
 
         return this;
     }
