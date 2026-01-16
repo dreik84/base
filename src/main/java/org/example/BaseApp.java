@@ -19,6 +19,20 @@ public class BaseApp {
 
         System.out.println();
 
+        base.nor(0, 0).show();
+        base.nor(0, 1).show();
+        base.nor(1, 0).show();
+        base.nor(1, 1).show();
+
+        System.out.println();
+
+        base.nand(0, 0).show();
+        base.nand(0, 1).show();
+        base.nand(1, 0).show();
+        base.nand(1, 1).show();
+
+        System.out.println();
+
         base.halfAdder(0, 0);
         base.halfAdder(0, 1);
         base.halfAdder(1, 0);

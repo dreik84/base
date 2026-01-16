@@ -53,6 +53,18 @@ public class BaseLogic {
         return this;
     }
 
+    // Peirce arrow - NOR Gate
+    public BaseLogic nor(int op1, int op2) {
+        operand = ~(op1 | op2);
+        return this;
+    }
+
+    // Sheffer stroke - NAND Gate
+    public BaseLogic nand(int op1, int op2) {
+        operand = ~(op1 & op2);
+        return this;
+    }
+
     public BaseLogic halfAdder(int op1, int op2) {
         int sum = op1 ^ op2;
         int carry = op1 & op2;
