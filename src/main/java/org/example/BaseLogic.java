@@ -106,6 +106,20 @@ public class BaseLogic {
         return this;
     }
 
+    public BaseLogic fullAdder(int op1, int op2, int carryIn) {
+        int xor = op1 ^ op2;
+        int and1 = xor & carryIn;
+        int and2 = op1 & op2;
+        int sum = xor ^ carryIn;
+        int carryOut = and1 | and2;
+
+        String res = carryOut + "" + sum;
+        System.out.println(res);
+        operand = Integer.parseInt(res, 2);
+
+        return this;
+    }
+
     public int res() {
         return operand;
     }
