@@ -120,6 +120,27 @@ public class BaseLogic {
         return this;
     }
 
+    public BaseLogic fullAdderNandGate(int op1, int op2, int carryIn) {
+        int nand1 = ~(op1 & op2);
+        int nand2 = ~(op1 & nand1);
+        int nand3 = ~(nand1 & op2);
+        int nand4 = ~(nand2 & nand3);
+        int nand5 = ~(nand4 & carryIn);
+        int nand6 = ~(nand4 & nand5);
+        int nand7 = ~(nand5 & carryIn);
+        int nand8 = ~(nand6 & nand7); // sum
+        int nand9 = ~(nand5 & nand1); // carry out
+
+        int sum = nand8;
+        int carryOut = nand9;
+
+        String res = carryOut + "" + sum;
+        System.out.println(res);
+        operand = Integer.parseInt(res, 2);
+
+        return this;
+    }
+
     public int res() {
         return operand;
     }
