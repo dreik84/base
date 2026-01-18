@@ -73,5 +73,16 @@ public class BaseApp {
         base.fullAdderNandGate(0, 1, 1);
         base.fullAdderNandGate(1, 1, 0);
         base.fullAdderNandGate(1, 1, 1);
+
+        System.out.println();
+
+        base.fullAdderNorGate(0, 0, 0);
+        base.fullAdderNorGate(0, 0, 1);
+        base.fullAdderNorGate(0, 1, 0);
+        base.fullAdderNorGate(1, 0, 0);
+        base.fullAdderNorGate(1, 0, 1);
+        base.fullAdderNorGate(0, 1, 1);
+        base.fullAdderNorGate(1, 1, 0);
+        base.fullAdderNorGate(1, 1, 1);
     }
 }

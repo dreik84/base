@@ -141,6 +141,27 @@ public class BaseLogic {
         return this;
     }
 
+    public BaseLogic fullAdderNorGate(int op1, int op2, int carryIn) {
+        int nor1 = ~(op1 | op2);
+        int nor2 = ~(op1 | nor1);
+        int nor3 = ~(nor1 | op2);
+        int nor4 = ~(nor2 | nor3);
+        int nor5 = ~(nor4 | carryIn);
+        int nor6 = ~(nor4 | nor5);
+        int nor7 = ~(nor5 | carryIn);
+        int nor8 = ~(nor6 | nor7); // sum
+        int nor9 = ~(nor5 | nor1); // carry out
+
+        int sum = nor8;
+        int carryOut = nor9;
+
+        String res = carryOut + "" + sum;
+        System.out.println(res);
+        operand = Integer.parseInt(res, 2);
+
+        return this;
+    }
+
     public int res() {
         return operand;
     }
