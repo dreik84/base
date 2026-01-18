@@ -2,6 +2,8 @@ package org.example;
 
 public class BaseLogic {
     private int operand;
+    private int carry;
+    private int sum;
 
     public BaseLogic(int operand) {
         this.operand = operand;
@@ -113,9 +115,12 @@ public class BaseLogic {
         int sum = xor ^ carryIn;
         int carryOut = and1 | and2;
 
-        String res = carryOut + "" + sum;
+        String res = sum + "" + operand;
         System.out.println(res);
-        operand = Integer.parseInt(res, 2);
+        operand = Integer.parseInt(res);
+
+        this.sum = sum;
+        this.carry = carryOut;
 
         return this;
     }
@@ -162,8 +167,16 @@ public class BaseLogic {
         return this;
     }
 
-    public int res() {
+    public int getRes() {
         return operand;
+    }
+
+    public int getCarry() {
+        return carry;
+    }
+
+    public int getSum() {
+        return sum;
     }
 
     public void show() {

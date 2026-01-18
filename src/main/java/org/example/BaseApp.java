@@ -4,7 +4,7 @@ public class BaseApp {
     public static void main(String[] args) {
         int op = 0b0;
         BaseLogic base = new BaseLogic(op);
-        int notOp = base.not().res();
+        int notOp = base.not().getRes();
 
         System.out.println(Integer.toBinaryString(op));
         System.out.println(Integer.toBinaryString(notOp));
@@ -84,5 +84,11 @@ public class BaseApp {
         base.fullAdderNorGate(0, 1, 1);
         base.fullAdderNorGate(1, 1, 0);
         base.fullAdderNorGate(1, 1, 1);
+
+        System.out.println();
+
+        base.fullAdder(1, 1, 0)
+                .fullAdder(0, base.getSum(), base.getCarry())
+                .fullAdder(1, base.getSum(), base.getCarry());
     }
 }
