@@ -86,5 +86,9 @@ public class BaseApp {
         adders.fullAdderNorGate(0, 1, 1).show();
         adders.fullAdderNorGate(1, 1, 0).show();
         adders.fullAdderNorGate(1, 1, 1).show();
+
+        System.out.println();
+
+        adders.rippleCarryAdder(new int[]{0, 0, 0, 1, 0, 1, 0, 0});
     }
 }

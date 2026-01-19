@@ -62,6 +62,27 @@ public class Adders extends BaseLogic {
         return this;
     }
 
+    // Сумматор с последовательным переносом
+    public Adders rippleCarryAdder(int[] nums) {
+        sum = 0;
+        carryOut = 0;
+        int result = 0;
+        StringBuilder sb = new StringBuilder();
+
+
+        for (int num : nums) {
+            sum = 0;
+            fullAdder(num, sum, carryOut).show();
+            sb.append(sum);
+            result += sum;
+        }
+
+        System.out.println(sb.toString());
+        System.out.println(Integer.toBinaryString(result));
+
+        return this;
+    }
+
     public int getCarryOut() {
         return carryOut;
     }
