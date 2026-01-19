@@ -33,62 +33,58 @@ public class BaseApp {
 
         System.out.println();
 
-        base.halfAdder(0, 0);
-        base.halfAdder(0, 1);
-        base.halfAdder(1, 0);
-        base.halfAdder(1, 1);
+        Adders adders = new Adders();
+
+        adders.halfAdder(0, 0).show();
+        adders.halfAdder(0, 1).show();
+        adders.halfAdder(1, 0).show();
+        adders.halfAdder(1, 1).show();
 
         System.out.println();
 
-        base.halfAdder2(0, 0);
-        base.halfAdder2(0, 1);
-        base.halfAdder2(1, 0);
-        base.halfAdder2(1, 1);
+        adders.halfAdder2(0, 0).show();
+        adders.halfAdder2(0, 1).show();
+        adders.halfAdder2(1, 0).show();
+        adders.halfAdder2(1, 1).show();
 
         System.out.println();
 
-        base.halfAdderNandGate(0, 0);
-        base.halfAdderNandGate(0, 1);
-        base.halfAdderNandGate(1, 0);
-        base.halfAdderNandGate(1, 1);
+        adders.halfAdderNandGate(0, 0).show();
+        adders.halfAdderNandGate(0, 1).show();
+        adders.halfAdderNandGate(1, 0).show();
+        adders.halfAdderNandGate(1, 1).show();
 
         System.out.println();
 
-        base.fullAdder(0, 0, 0);
-        base.fullAdder(0, 0, 1);
-        base.fullAdder(0, 1, 0);
-        base.fullAdder(1, 0, 0);
-        base.fullAdder(1, 0, 1);
-        base.fullAdder(0, 1, 1);
-        base.fullAdder(1, 1, 0);
-        base.fullAdder(1, 1, 1);
+        adders.fullAdder(0, 0, 0).show();
+        adders.fullAdder(0, 0, 1).show();
+        adders.fullAdder(0, 1, 0).show();
+        adders.fullAdder(1, 0, 0).show();
+        adders.fullAdder(1, 0, 1).show();
+        adders.fullAdder(0, 1, 1).show();
+        adders.fullAdder(1, 1, 0).show();
+        adders.fullAdder(1, 1, 1).show();
 
         System.out.println();
 
-        base.fullAdderNandGate(0, 0, 0);
-        base.fullAdderNandGate(0, 0, 1);
-        base.fullAdderNandGate(0, 1, 0);
-        base.fullAdderNandGate(1, 0, 0);
-        base.fullAdderNandGate(1, 0, 1);
-        base.fullAdderNandGate(0, 1, 1);
-        base.fullAdderNandGate(1, 1, 0);
-        base.fullAdderNandGate(1, 1, 1);
+        adders.fullAdderNandGate(0, 0, 0).show();
+        adders.fullAdderNandGate(0, 0, 1).show();
+        adders.fullAdderNandGate(0, 1, 0).show();
+        adders.fullAdderNandGate(1, 0, 0).show();
+        adders.fullAdderNandGate(1, 0, 1).show();
+        adders.fullAdderNandGate(0, 1, 1).show();
+        adders.fullAdderNandGate(1, 1, 0).show();
+        adders.fullAdderNandGate(1, 1, 1).show();
 
         System.out.println();
 
-        base.fullAdderNorGate(0, 0, 0);
-        base.fullAdderNorGate(0, 0, 1);
-        base.fullAdderNorGate(0, 1, 0);
-        base.fullAdderNorGate(1, 0, 0);
-        base.fullAdderNorGate(1, 0, 1);
-        base.fullAdderNorGate(0, 1, 1);
-        base.fullAdderNorGate(1, 1, 0);
-        base.fullAdderNorGate(1, 1, 1);
-
-        System.out.println();
-
-        base.fullAdder(1, 1, 0)
-                .fullAdder(0, base.getSum(), base.getCarry())
-                .fullAdder(1, base.getSum(), base.getCarry());
+        adders.fullAdderNorGate(0, 0, 0).show();
+        adders.fullAdderNorGate(0, 0, 1).show();
+        adders.fullAdderNorGate(0, 1, 0).show();
+        adders.fullAdderNorGate(1, 0, 0).show();
+        adders.fullAdderNorGate(1, 0, 1).show();
+        adders.fullAdderNorGate(0, 1, 1).show();
+        adders.fullAdderNorGate(1, 1, 0).show();
+        adders.fullAdderNorGate(1, 1, 1).show();
     }
 }
