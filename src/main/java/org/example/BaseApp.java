@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class BaseApp {
     public static void main(String[] args) {
         int op = 0b0;
@@ -89,6 +91,13 @@ public class BaseApp {
 
         System.out.println();
 
-        adders.rippleCarryAdder(new int[]{0, 0, 0, 1, 0, 1, 0, 0});
+        int[] a = new int[]{1, 1, 1, 1, 1, 1, 1, 1};
+        int[] b = new int[]{1, 1, 1, 1, 1, 1, 1, 1};
+
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        System.out.println();
+
+        adders.rippleCarryAdder(a, b);
     }
 }
