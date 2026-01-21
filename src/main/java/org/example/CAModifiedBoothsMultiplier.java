@@ -7,11 +7,13 @@ package org.example;
 public class CAModifiedBoothsMultiplier {
 
     public byte[] twosComplement(byte x) {
-        byte y = (byte) (~x + 1);
+        byte y = (byte) (~x + 1); // -5 1111 1011,  5 0000 0101
+        System.out.println(Integer.toBinaryString(y));
 
         byte mask = 1;
         mask = (byte) (mask << 7);
-        byte num[] = new byte[10];
+        System.out.println(Integer.toBinaryString(mask));
+        byte[] num = new byte[10];
         byte i = 0;
 
         for (i = 1; i <= 8; i++) {
@@ -45,7 +47,7 @@ public class CAModifiedBoothsMultiplier {
         return num;
     }
 
-    public byte[] eightbitFullAdder(byte a, byte b, byte cin) {
+    public byte[] eightBitFullAdder(byte a, byte b, byte cin) {
         byte sum = 0, temp1 = 0, cout = 0;
         byte sumno[] = new byte[10];
         byte couttemp[] = new byte[10];
@@ -75,8 +77,7 @@ public class CAModifiedBoothsMultiplier {
     public static void main(String args[]) {
         CAModifiedBoothsMultiplier mbm = new CAModifiedBoothsMultiplier();
         byte x = 5;
-        byte complementedno[];
-        complementedno = mbm.twosComplement(x);
+        byte[] complementedno = mbm.twosComplement(x);
 
         for (int i = 0; i <= 8; i++)
             System.out.print(complementedno[i]);
@@ -84,7 +85,7 @@ public class CAModifiedBoothsMultiplier {
         System.out.println("\n");
 
         byte a = 2, b = 3, cin = 0;
-        byte fulladder[] = mbm.eightbitFullAdder(a, b, cin);
+        byte fulladder[] = mbm.eightBitFullAdder(a, b, cin);
 
         for (int i = 0; i <= 8; i++)
             System.out.print(fulladder[i]);
