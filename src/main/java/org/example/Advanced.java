@@ -12,6 +12,15 @@ public class Advanced {
         System.out.println(checkSings(1, -2));
         System.out.println(checkSings(-1, 2));
 
+        System.out.println(Integer.toBinaryString(-12 | 0b11111111));
+        System.out.println(Integer.toBinaryString(-12 | 0b11111111).length());
+        System.out.println((byte) 0b11111111);
+        System.out.println(0b11111111111111111111111111111111);
+
+        // 00000001 - 1
+        // 11111110 - обратный код
+        // 11111111 - обратный код + 1 (дополнительный код) -1
+
     }
 
     // return -1, 0 or 1
