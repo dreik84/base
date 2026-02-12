@@ -6,11 +6,11 @@ public class Advanced {
         System.out.println(getSing(-12));
         System.out.println(getSing(25));
 
-        System.out.println(checkSings(1, 2));
-        System.out.println(checkSings(-1, -2));
-        System.out.println(checkSings(0, 0));
-        System.out.println(checkSings(1, -2));
-        System.out.println(checkSings(-1, 2));
+        System.out.println(checkSameSings(1, 2));
+        System.out.println(checkSameSings(-1, -2));
+        System.out.println(checkSameSings(0, 0));
+        System.out.println(checkSameSings(1, -2));
+        System.out.println(checkSameSings(-1, 2));
 
         System.out.println(Integer.toBinaryString(-12 | 0b11111111));
         System.out.println(Integer.toBinaryString(-12 | 0b11111111).length());
@@ -32,7 +32,7 @@ public class Advanced {
         return mask | (num >> 31);
     }
 
-    public static boolean checkSings(int x, int y) {
+    public static boolean checkSameSings(int x, int y) {
         return (x ^ y) >= 0;
     }
 }
