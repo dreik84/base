@@ -16,6 +16,16 @@ public class Advanced {
         System.out.println(Integer.toBinaryString(-12 | 0b11111111).length());
         System.out.println((byte) 0b11111111);
         System.out.println(0b11111111111111111111111111111111);
+        System.out.println();
+
+        System.out.println(getAbs(123));
+        System.out.println(getAbs(-123));
+
+        // 0111 1011 - dec 123
+        // 1000 0101 - dec -123
+        // 1111 1111 - mask -1
+        // 1000 0100 - dec -124
+        // 0111 1011 - XOR
 
         // 00000001 - 1
         // 11111110 - обратный код
@@ -34,5 +44,11 @@ public class Advanced {
 
     public static boolean checkSameSings(int x, int y) {
         return (x ^ y) >= 0;
+    }
+
+    public static int getAbs(int num) {
+        int mask = num >> 31;
+
+        return (num + mask) ^ mask;
     }
 }
