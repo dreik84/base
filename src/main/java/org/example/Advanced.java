@@ -20,6 +20,10 @@ public class Advanced {
 
         System.out.println(getAbs(123));
         System.out.println(getAbs(-123));
+        System.out.println();
+
+        System.out.println(getMin(5, 10));
+        System.out.println(getMax(5, 10));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -51,4 +55,14 @@ public class Advanced {
 
         return (num + mask) ^ mask;
     }
+
+    public static int getMin(int x, int y) {
+        return y + ((x - y) & ((x - y) >> 31));
+    }
+
+    public static int getMax(int x, int y) {
+        return x - ((x - y) & ((x - y) >> 31));
+    }
+
+
 }
