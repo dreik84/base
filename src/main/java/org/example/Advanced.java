@@ -22,7 +22,7 @@ public class Advanced {
         System.out.println(getAbs(-123));
         System.out.println();
 
-        System.out.println(getMin(5, 10));
+        System.out.println(getMin(10, 5));
         System.out.println(getMax(5, 10));
 
         // 0111 1011 - dec 123
@@ -55,6 +55,21 @@ public class Advanced {
 
         return (num + mask) ^ mask;
     }
+
+    // x = 10, y = 5
+    // x - y = 5 -> 0b00000101
+    // 00000000 >> 31
+    // 00000101 &
+    // 00000000 + y -> min
+
+    // x = 5, y = 10
+    // x - y = -5 -> 11111011
+    // 11111111 >> 31
+    // 11111011 &
+    // 11111011 + y
+    // 00001010 =
+    // 00000101 -> min 5
+
 
     public static int getMin(int x, int y) {
         return y + ((x - y) & ((x - y) >> 31));
