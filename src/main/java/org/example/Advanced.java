@@ -24,6 +24,10 @@ public class Advanced {
 
         System.out.println(getMin(10, 5));
         System.out.println(getMax(5, 10));
+        System.out.println();
+
+        System.out.println(isPowerOfTwo(3));
+        System.out.println(isPowerOfTwo(256));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -77,6 +81,10 @@ public class Advanced {
 
     public static int getMax(int x, int y) {
         return x - ((x - y) & ((x - y) >> 31));
+    }
+
+    public static boolean isPowerOfTwo(int x) {
+        return (x & ~(x & (x - 1))) == 1;
     }
 
 
