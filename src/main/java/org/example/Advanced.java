@@ -27,7 +27,7 @@ public class Advanced {
         System.out.println();
 
         System.out.println(isPowerOfTwo(3));
-        System.out.println(isPowerOfTwo(256));
+        System.out.println(isPowerOfTwo(32));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -84,8 +84,9 @@ public class Advanced {
     }
 
     public static boolean isPowerOfTwo(int x) {
+        int num = ~(x & (x - 1));
+        num = num & x;
+        System.out.println(num);
         return (x & ~(x & (x - 1))) == 1;
     }
-
-
 }
