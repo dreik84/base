@@ -29,6 +29,10 @@ public class Advanced {
         System.out.println(isPowerOfTwo(3));
         System.out.println(isPowerOfTwo(32));
         System.out.println(isPowerOfTwo(0));
+        System.out.println();
+
+        System.out.println(leastBit(0x47AD85));
+        System.out.println(leastBit(4));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -94,5 +98,10 @@ public class Advanced {
 
     public static boolean isPowerOfTwo(int x) {
         return (x > 0) && ((x & (x - 1)) == 0);
+    }
+
+    public static int leastBit(int x) {
+        System.out.printf("x=%x\n", x);
+        return (x & (~x + 1));
     }
 }
