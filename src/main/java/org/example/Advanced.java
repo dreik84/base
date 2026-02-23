@@ -33,6 +33,10 @@ public class Advanced {
 
         System.out.println(leastBit(0x47AD85));
         System.out.println(leastBit(4));
+        System.out.println();
+
+        System.out.println(greatestBit(5));
+        System.out.println(greatestBit(32));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -103,5 +107,16 @@ public class Advanced {
     public static int leastBit(int x) {
         System.out.printf("x=%x\n", x);
         return (x & (~x + 1));
+    }
+
+    public static int greatestBit(int x) {
+        int power = 1;
+
+        for (int i = 1; i < 32; i++) {
+            x |= x >> power;
+            power <<= 1;
+        }
+
+        return x - (x >> 1);
     }
 }
