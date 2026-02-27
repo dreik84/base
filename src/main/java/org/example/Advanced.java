@@ -39,7 +39,7 @@ public class Advanced {
         System.out.println(greatestBit(32));
         System.out.println();
 
-        System.out.println(cyclicRotateLeft(1, 2));
+        System.out.println(cyclicRotateLeft(5, 2));
         System.out.println(cyclicRotateRight(1, 2));
 
         // 0111 1011 - dec 123
@@ -123,6 +123,13 @@ public class Advanced {
 
         return x - (x >> 1);
     }
+
+    // 0000 0101 - x = 5
+    // 0000 0010 - d = 2
+    // 0001 0100 x << d
+    // 0001 1110 32 - d = 30
+    // 0000 0000 x >>> 30
+    // 0001 0100 | = 20
 
     public static int cyclicRotateLeft(int x, int d) {
         return (x << d) | (x >>> (32 - d));
