@@ -41,6 +41,9 @@ public class Advanced {
 
         System.out.println(cyclicRotateLeft(5, 2));
         System.out.println(cyclicRotateRight(1, 2));
+        System.out.println();
+
+        System.out.println(bitCounter((short) 5));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -137,5 +140,12 @@ public class Advanced {
 
     public static int cyclicRotateRight(int x, int d) {
         return (x >>> d) | (x << (32 - d));
+    }
+
+    public static short bitCounter(short x) {
+        x = (short) (x - ((x >>> 1) & 0x5555));
+        x = (short) ((x & 0x3333) + ((x >>> 2) * 0x3333));
+        x = (short) ((x + (x >>> 4)) & 0x0F0F);
+        return (short) ((x * 0x0101) >>> 8);
     }
 }
