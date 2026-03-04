@@ -44,6 +44,9 @@ public class Advanced {
         System.out.println();
 
         System.out.println(bitCounter(5));
+        System.out.println();
+
+        System.out.println(reverseBits(5));
 
         // 0111 1011 - dec 123
         // 1000 0101 - dec -123
@@ -167,5 +170,13 @@ public class Advanced {
         x = ((x & 0x33333333) + ((x >>> 2) * 0x33333333));
         x = ((x + (x >>> 4)) & 0x0F0F0F0F);
         return ((x * 0x01010101) >>> 16);
+    }
+
+    public static int reverseBits(int x) {
+        x = ((x & 0x55555555) << 1) | ((x >>> 1) & 0x55555555);
+        x = ((x & 0x33333333) << 2) | ((x >>> 2) & 0x33333333);
+        x = ((x & 0x0F0F0F0F) << 4) | ((x >>> 4) & 0x0F0F0F0F);
+        x = ((x & 0x00FF00FF) << 8) | ((x >>> 8) & 0x00FF00FF);
+        return x;
     }
 }
