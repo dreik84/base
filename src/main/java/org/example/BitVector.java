@@ -28,13 +28,30 @@ public class BitVector {
         return (numbers[divide] & (1 << remainder)) != 0;
     }
 
+    public void show() {
+        for (int num : numbers) {
+            System.out.println(Integer.toBinaryString(num));
+        }
+    }
+
+    // 0000 0101 k = 5
+    // 0001 1111 0x1F = 31
+    // 0000 0101 & remainder = 5
+    // 0000 0000 k >> 5 = divide
+    // 0010 0000 1 << remainder = 32
+    // 0010 0000 | 
+
 
     public static void main(String[] args) {
 
         BitSet bitSet = new BitSet();
 
         BitVector bitVector = new BitVector(100);
-        bitVector.set(1);
+        bitVector.show();
+        System.out.println();
+        bitVector.set(31);
+        bitVector.show();
+        System.out.println();
         System.out.println(bitVector.isSet(1));
         bitVector.unset(1);
         System.out.println(bitVector.isSet(1));
